@@ -253,34 +253,13 @@ int GameClass::Update()
 				case sf::Keyboard::W:
 				case sf::Keyboard::Space:
 				case sf::Keyboard::Up:
-					if (player.grounded)
-					{
-						player.grounded = false;
-						player.velocity.y += -player.jumpSpeed + deltaTime;
-					}
-					cout << "Jump?" << endl;
+					
 					break;
 				case sf::Keyboard::D:
-					//Move right
-					if (player.grounded)
-					{
-						player.velocity.x += player.speed * deltaTime;
-					}
-					else
-					{
-						player.velocity.x += player.speed / 3 * deltaTime;
-					}
+				
 					break;
 				case sf::Keyboard::A:
-					//Move left
-					if (player.grounded)
-					{
-						player.velocity.x += -player.speed * deltaTime;
-					}
-					else
-					{
-						player.velocity.x += -player.speed / 3 * deltaTime;
-					}
+					
 					break;
 				}
 			}
@@ -298,11 +277,32 @@ int GameClass::Update()
 				player.velocity.x += player.speed / 3 * deltaTime;
 			}
 		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+		{
+			//Move left
+			if (player.grounded)
+			{
+				player.velocity.x -= player.speed * deltaTime;
+			}
+			else
+			{
+				player.velocity.x -= player.speed / 3 * deltaTime;
+			}
+		}
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+		{
+			if (player.grounded)
+			{
+				player.grounded = false;
+				player.velocity.y += -player.jumpSpeed + deltaTime;
+			}
+		}
+		
 
 		//Friction
 		if (player.grounded)
 		{
-			if (abs(player.velocity.x) > 0.01f)
+			if (abs(player.velocity.x) > 0.05f)
 			{
 				player.velocity.x -= friction * deltaTime;
 			}
@@ -369,12 +369,11 @@ int GameClass::Update()
 							if (pcol.dir.x >= 0.0f)
 							{
 								//We want to stop, not move into the next tile
-								player.nextPos.x = tile[i][j].sprite.getGlobalBounds().left - 32;
-								player.velocity.x = 0.0f;
+								player.nextPos.x = tile[i][j].sprite.getGlobalBounds().left - 32 - 0.01f;
 							}
 							else //left side
 							{
-								player.nextPos.x = tile[i][j].sprite.getGlobalBounds().left + tile[i][j].sprite.getGlobalBounds().width;
+								player.nextPos.x = tile[i][j].sprite.getGlobalBounds().left + tile[i][j].sprite.getGlobalBounds().width + 0.01f;
 							}
 						}
 					}
