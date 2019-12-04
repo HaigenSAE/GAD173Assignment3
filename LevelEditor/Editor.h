@@ -104,12 +104,12 @@ public:
 	//Set up tiles to select and paint with
 	Tile tileButton[9];
 	//setup tiles
-	Tile tile[x][y];
+	Tile** tile = new Tile * [x];
 	bool Start();
 	int Update();
-	void save(Tile inctile[x][y]);
-	void load(Tile inctile[x][y]);
+	void save(Tile** incTile);
+	void load(Tile** incTile);
 
 	//printing out the tiles
-	void printToConsole(Tile inctile[x][y]);
+	void printToConsole(Tile** incTile);
 };

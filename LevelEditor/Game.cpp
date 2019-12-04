@@ -3,17 +3,22 @@
 using namespace std;
 
 GameClass::GameClass() {
-	static const int x = 30;
-	static const int y = 20;
 	//setup window size
 	const int windowWidth = 1025;
 	const int windowHeight = 650;
 	//physics
 	gravity = 0.5f;
 	friction = 10.0f;
+
+	//Loop for tile init
+	for (int i = 0; i < x; i++)
+	{
+		tile[i] = new Tile[y];
+	}
+
 }
 
-void GameClass::LoadLevel(string levelName, Tile inctile[x][y])
+void GameClass::LoadLevel(string levelName, Tile** inctile)
 {
 	string line;
 	ifstream myfile(levelName + ".sav");
@@ -293,4 +298,13 @@ void Player::setPosition(sf::Vector2f v)
 void Player::setPosition(float x, float y)
 {
 	sprite.setPosition(x, y);
+}
+
+int sign(int x)
+{
+	return (x > 0) - (x < 0);
+}
+int sign(float x)
+{
+	return (x > 0.0f) - (x < 0.0f);
 }

@@ -245,23 +245,6 @@ int GameClass::Update()
 			case sf::Event::Closed:
 				window.close();
 				break;
-
-				//cycle for current tile
-			case sf::Event::KeyReleased:
-				switch (event.key.code)
-				{
-				case sf::Keyboard::W:
-				case sf::Keyboard::Space:
-				case sf::Keyboard::Up:
-					
-					break;
-				case sf::Keyboard::D:
-				
-					break;
-				case sf::Keyboard::A:
-					
-					break;
-				}
 			}
 		}
 
@@ -302,9 +285,9 @@ int GameClass::Update()
 		//Friction
 		if (player.grounded)
 		{
-			if (abs(player.velocity.x) > 0.05f)
+			if (abs(player.velocity.x) > 0.1f)
 			{
-				player.velocity.x -= friction * deltaTime;
+				player.velocity.x -= friction * deltaTime * (sign(player.velocity.x));
 			}
 			else
 			{
@@ -312,7 +295,13 @@ int GameClass::Update()
 			}
 		}
 
-		//Gravity
+		// a maximum horizontal absoulte velocity.
+		if (abs(player.velocity.x) > 0.6f)
+		{
+			player.velocity.x = 0.6f * sign(player.velocity.x);
+		}
+
+		//a maximum vertical velocity and adding gravity to the player..
 		if (player.velocity.y < 1.0f)
 		{
 			player.velocity.y += gravity * deltaTime;
@@ -330,6 +319,7 @@ int GameClass::Update()
 		//we  set grounded to false here because we will later set it to true if we are in fact on the ground.
 		player.grounded = false;
 
+		//Check for collisions with tiles
 		for (int i = 0; i < x; i++)
 		{
 			for (int j = 0; j < y; j++)
@@ -369,13 +359,35 @@ int GameClass::Update()
 							if (pcol.dir.x >= 0.0f)
 							{
 								//We want to stop, not move into the next tile
-								player.nextPos.x = tile[i][j].sprite.getGlobalBounds().left - 32 - 0.01f;
+								player.nextPos.x = tile[i][j].sprite.getGlobalBounds().left - 32;
+								player.velocity.x = 0.0f;
 							}
 							else //left side
 							{
-								player.nextPos.x = tile[i][j].sprite.getGlobalBounds().left + tile[i][j].sprite.getGlobalBounds().width + 0.01f;
+								player.nextPos.x = tile[i][j].sprite.getGlobalBounds().left + tile[i][j].sprite.getGlobalBounds().width;
+								player.velocity.x = 0.0f;
 							}
 						}
+					}
+				}
+				else if (tile[i][j].actor.type == Actor::Type::Coin) {
+					//add coin, then destroy (change type to none)
+					//check collision
+					Collision pcol = player.CollisionCheck(tile[i][j].sprite.getGlobalBounds());
+					if (pcol.hit)
+					{
+						player.coins++;
+						tile[i][j].actor.type == Actor::Type::None;
+						tile[i][j].refreshTile();
+					}
+				}
+				else if (tile[i][j].type == Tile::Type::Lava)
+				{
+					Collision pcol = player.CollisionCheck(tile[i][j].sprite.getGlobalBounds());
+					if (pcol.hit)
+					{
+						player.lives--;
+						//respawn player
 					}
 				}
 			}

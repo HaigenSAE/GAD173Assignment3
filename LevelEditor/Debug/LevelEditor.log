@@ -1,17 +1,35 @@
-﻿  Source.cpp
-C:\Users\drago\Documents\GAD173Assignment3\LevelEditor\Source.cpp(44,67): warning C4244:  'argument': conversion from 'const int' to 'T', possible loss of data
-C:\Users\drago\Documents\GAD173Assignment3\LevelEditor\Source.cpp(44,67): warning C4244:         with
-C:\Users\drago\Documents\GAD173Assignment3\LevelEditor\Source.cpp(44,67): warning C4244:         [
-C:\Users\drago\Documents\GAD173Assignment3\LevelEditor\Source.cpp(44,67): warning C4244:             T=float
-C:\Users\drago\Documents\GAD173Assignment3\LevelEditor\Source.cpp(44,67): warning C4244:         ]
-C:\Users\drago\Documents\GAD173Assignment3\LevelEditor\Source.cpp(47,62): warning C4244:  'argument': conversion from 'const int' to 'T', possible loss of data
-C:\Users\drago\Documents\GAD173Assignment3\LevelEditor\Source.cpp(47,62): warning C4244:         with
-C:\Users\drago\Documents\GAD173Assignment3\LevelEditor\Source.cpp(47,62): warning C4244:         [
-C:\Users\drago\Documents\GAD173Assignment3\LevelEditor\Source.cpp(47,62): warning C4244:             T=float
-C:\Users\drago\Documents\GAD173Assignment3\LevelEditor\Source.cpp(47,62): warning C4244:         ]
-C:\Users\drago\Documents\GAD173Assignment3\LevelEditor\Source.cpp(47,49): warning C4244:  'argument': conversion from 'const int' to 'T', possible loss of data
-C:\Users\drago\Documents\GAD173Assignment3\LevelEditor\Source.cpp(47,49): warning C4244:         with
-C:\Users\drago\Documents\GAD173Assignment3\LevelEditor\Source.cpp(47,49): warning C4244:         [
-C:\Users\drago\Documents\GAD173Assignment3\LevelEditor\Source.cpp(47,49): warning C4244:             T=float
-C:\Users\drago\Documents\GAD173Assignment3\LevelEditor\Source.cpp(47,49): warning C4244:         ]
-  LevelEditor.vcxproj -> C:\Users\drago\Documents\GAD173Assignment3\Debug\LevelEditor.exe
+﻿  Game.cpp
+C:\Users\hpennycuick\Documents\GAD173Assignment3\LevelEditor\Game.cpp(37,23): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\hpennycuick\Documents\GAD173Assignment3\LevelEditor\Game.cpp(68,20): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\hpennycuick\Documents\GAD173Assignment3\LevelEditor\Game.cpp(87,20): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\hpennycuick\Documents\GAD173Assignment3\LevelEditor\Game.cpp(106,20): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\hpennycuick\Documents\GAD173Assignment3\LevelEditor\Game.cpp(125,20): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\hpennycuick\Documents\GAD173Assignment3\LevelEditor\Game.cpp(144,20): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\hpennycuick\Documents\GAD173Assignment3\LevelEditor\Game.cpp(156,105): warning C4244:  'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\hpennycuick\Documents\GAD173Assignment3\LevelEditor\Game.cpp(156,105): warning C4244:         with
+C:\Users\hpennycuick\Documents\GAD173Assignment3\LevelEditor\Game.cpp(156,105): warning C4244:         [
+C:\Users\hpennycuick\Documents\GAD173Assignment3\LevelEditor\Game.cpp(156,105): warning C4244:             T=float
+C:\Users\hpennycuick\Documents\GAD173Assignment3\LevelEditor\Game.cpp(156,105): warning C4244:         ]
+  Source.cpp
+C:\Users\hpennycuick\Documents\GAD173Assignment3\LevelEditor\Game.cpp(156,54): warning C4244:  'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\hpennycuick\Documents\GAD173Assignment3\LevelEditor\Game.cpp(156,54): warning C4244:         with
+C:\Users\hpennycuick\Documents\GAD173Assignment3\LevelEditor\Game.cpp(156,54): warning C4244:         [
+C:\Users\hpennycuick\Documents\GAD173Assignment3\LevelEditor\Game.cpp(156,54): warning C4244:             T=float
+C:\Users\hpennycuick\Documents\GAD173Assignment3\LevelEditor\Game.cpp(156,54): warning C4244:         ]
+C:\Users\hpennycuick\Documents\GAD173Assignment3\LevelEditor\Source.cpp(44,67): warning C4244:  'argument': conversion from 'const int' to 'T', possible loss of data
+C:\Users\hpennycuick\Documents\GAD173Assignment3\LevelEditor\Source.cpp(44,67): warning C4244:         with
+C:\Users\hpennycuick\Documents\GAD173Assignment3\LevelEditor\Source.cpp(44,67): warning C4244:         [
+C:\Users\hpennycuick\Documents\GAD173Assignment3\LevelEditor\Source.cpp(44,67): warning C4244:             T=float
+C:\Users\hpennycuick\Documents\GAD173Assignment3\LevelEditor\Source.cpp(44,67): warning C4244:         ]
+C:\Users\hpennycuick\Documents\GAD173Assignment3\LevelEditor\Source.cpp(47,62): warning C4244:  'argument': conversion from 'const int' to 'T', possible loss of data
+C:\Users\hpennycuick\Documents\GAD173Assignment3\LevelEditor\Source.cpp(47,62): warning C4244:         with
+C:\Users\hpennycuick\Documents\GAD173Assignment3\LevelEditor\Source.cpp(47,62): warning C4244:         [
+C:\Users\hpennycuick\Documents\GAD173Assignment3\LevelEditor\Source.cpp(47,62): warning C4244:             T=float
+C:\Users\hpennycuick\Documents\GAD173Assignment3\LevelEditor\Source.cpp(47,62): warning C4244:         ]
+  Generating Code...
+C:\Users\hpennycuick\Documents\GAD173Assignment3\LevelEditor\Source.cpp(47,49): warning C4244:  'argument': conversion from 'const int' to 'T', possible loss of data
+C:\Users\hpennycuick\Documents\GAD173Assignment3\LevelEditor\Source.cpp(47,49): warning C4244:         with
+C:\Users\hpennycuick\Documents\GAD173Assignment3\LevelEditor\Source.cpp(47,49): warning C4244:         [
+C:\Users\hpennycuick\Documents\GAD173Assignment3\LevelEditor\Source.cpp(47,49): warning C4244:             T=float
+C:\Users\hpennycuick\Documents\GAD173Assignment3\LevelEditor\Source.cpp(47,49): warning C4244:         ]
+  LevelEditor.vcxproj -> C:\Users\hpennycuick\Documents\GAD173Assignment3\Debug\LevelEditor.exe

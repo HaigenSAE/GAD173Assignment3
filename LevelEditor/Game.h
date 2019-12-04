@@ -69,13 +69,18 @@ public:
 	//setting the display to all black and adding text "GAME OVER"
 	void GameOver();
 	//Tiles to load
-	Tile tile[x][y];
+	Tile** tile = new Tile*[x];
+	//Tile tile[x][y]; ^replace with this
 	//load level function
-	void LoadLevel(string levelName, Tile incTile[x][y]);
+	void LoadLevel(string levelName, Tile** incTile);
 	//deltaTime stuff
 	sf::Clock clock;
 	float deltaTime;
 	//physics values
 	float gravity;
 	float friction;
+	int coins;
 };
+
+int sign(int x);
+int sign(float x);

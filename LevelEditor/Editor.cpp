@@ -3,8 +3,8 @@
 using namespace std;
 
 EditorClass::EditorClass() {
-	static const int x = 30;
-	static const int y = 20;
+	static const int x = 3;
+	static const int y = 2;
 	//Track if we are painting with actor or tile
 	actorNotTile = false;
 	//setup window size
@@ -12,6 +12,13 @@ EditorClass::EditorClass() {
 	const int windowHeight = 650;
 	curActorType = Actor::Type::None;
 	curTileType = Tile::Type::Sky;
+
+	//Loop for tile init
+	for (int i = 0; i < x; i++)
+	{
+		tile[i] = new Tile[y];
+	}
+
 }
 
 void Actor::loadTextures()
@@ -172,7 +179,7 @@ ToolPanel::ToolPanel()
 		saveButton.rect.getPosition().y);
 }
 
-void EditorClass::save(Tile inctile[x][y])
+void EditorClass::save(Tile** incTile)
 {
 	//writing to a text file
 	ofstream myfile("save.sav");
@@ -301,7 +308,7 @@ void EditorClass::save(Tile inctile[x][y])
 	}
 }
 
-void EditorClass::load(Tile inctile[x][y])
+void EditorClass::load(Tile** incTile)
 {
 	string line;
 	ifstream myfile("save.sav");
@@ -454,7 +461,7 @@ void EditorClass::load(Tile inctile[x][y])
 	}
 }
 
-void EditorClass::printToConsole(Tile inctile[x][y])
+void EditorClass::printToConsole(Tile** incTile)
 {
 	for (int i = 0; i < x; i++)
 	{
